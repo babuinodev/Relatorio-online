@@ -5,8 +5,9 @@ import textwrap
 from io import BytesIO
 from datetime import datetime
 
+# Cria uma única instância do Flask
 app = Flask(__name__)
-app.secret_key = "sua_chave_secreta_aqui"  # Necessário para usar mensagens flash
+app.secret_key = "beeb729ffffb25428e39687d507ea476f105a5ab523b1db753f0830df3893cf4"  # Necessário para usar mensagens flash
 
 # Rota principal
 @app.route("/", methods=["GET", "POST"])
@@ -72,9 +73,3 @@ def index():
 # Iniciar o servidor Flask
 if __name__ == "__main__":
     app.run(debug=True)
-
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-    return render_template("index.html")  # Procura o arquivo index.html na pasta templates
